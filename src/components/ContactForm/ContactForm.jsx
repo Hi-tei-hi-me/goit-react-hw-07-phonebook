@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { MdPersonAddDisabled, MdPersonAdd } from 'react-icons/md';
+import { BsPatchExclamation } from 'react-icons/bs';
 import { FormContainer, Label, Input, AddBtn } from './ContactForm.styled';
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/contacts/selectors';
@@ -33,7 +34,9 @@ export const ContactForm = () => {
             icon: <MdPersonAdd size={28} color="#327047" />,
           })
         )
-        .catch(() => toast.error(`Something wrong`));
+        .catch(error => toast(`Oops!`, error.message), {
+          icon: <BsPatchExclamation size={40} color="#5d3d79" />,
+        });
       resetForm();
     }
   };

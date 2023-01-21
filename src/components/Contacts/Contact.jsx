@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import { MdPersonRemove } from 'react-icons/md';
+import { BsPatchExclamation } from 'react-icons/bs';
 import { Item, DeleteBtn } from './Contacts.styled';
 import { deleteContact } from 'redux/operations';
 import { setIsLoading } from 'redux/contacts/selectors';
@@ -19,7 +20,9 @@ export const Contact = ({ id, name, number }) => {
           icon: <MdPersonRemove size={25} color="#b24a4a" />,
         });
       })
-      .catch(() => toast.error(`Something wrong`));
+      .catch(error => toast(`Oops!`, error.message), {
+        icon: <BsPatchExclamation size={40} color="#5d3d79" />,
+      });
   };
   const DeleteInProgress = isLoading && id === IdToDelete;
   return (
