@@ -5,7 +5,7 @@ export const Loader = () => {
     <Oval
       height={150}
       width={150}
-      color="rgba(235, 212, 98, 0.9)"
+      color="rgb(67, 133, 179);"
       wrapperStyle={{
         position: 'absolute',
         zIndex: '1000',
@@ -16,7 +16,7 @@ export const Loader = () => {
       wrapperClass=""
       visible={true}
       ariaLabel="oval-loading"
-      secondaryColor="rgba(153, 198, 231, 0.9)"
+      secondaryColor="#bcbcbc"
       strokeWidth={2}
       strokeWidthSecondary={2}
     />

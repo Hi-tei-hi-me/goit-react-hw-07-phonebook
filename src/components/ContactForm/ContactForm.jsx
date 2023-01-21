@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { MdPersonAddDisabled, MdPersonAdd } from 'react-icons/md';
 import { FormContainer, Label, Input, AddBtn } from './ContactForm.styled';
-import { addContact } from 'redux/contacts/contactsSlice';
+import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/contacts/selectors';
 
 export const ContactForm = () => {
@@ -27,10 +27,13 @@ export const ContactForm = () => {
         icon: <MdPersonAddDisabled size={25} color="#ccba21" />,
       });
     } else {
-      dispatch(addContact(newContact));
-      toast(`${newContact.name} was successfully added to your Book`, {
-        icon: <MdPersonAdd size={28} color="#327047" />,
-      });
+      dispatch(addContact(newContact))
+        .then(response =>
+          toast(`${newContact.name} was successfully added to your Book`, {
+            icon: <MdPersonAdd size={28} color="#327047" />,
+          })
+        )
+        .catch(() => toast.error(`Something wrong`));
       resetForm();
     }
   };
