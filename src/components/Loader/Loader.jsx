@@ -5,7 +5,7 @@ export const Loader = () => {
     <Oval
       height={150}
       width={150}
-      color="rgb(67, 133, 179);"
+      color="rgb(106, 136, 157)"
       wrapperStyle={{
         position: 'absolute',
         zIndex: '1000',
