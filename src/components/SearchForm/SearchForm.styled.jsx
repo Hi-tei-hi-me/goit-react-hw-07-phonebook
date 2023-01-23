@@ -14,4 +14,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 50%;
   border-radius: 7px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;

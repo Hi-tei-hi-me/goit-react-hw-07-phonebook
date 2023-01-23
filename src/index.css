@@ -9,6 +9,7 @@ body {
   overflow-y: scroll;
   background-color: #ece4da;
   background-image: url(assets/BG.png);
+  background-attachment: fixed;
   background-size: 500px;
   background-position: center 150px;
   background-origin: border-box;
